@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.big {
+    width: 1349px;
+    height: auto;
+}
+
+.container {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+a {
+    width: 50px;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.nav {
+    width: 100%;
+    height: 36px;
+    background-color: #F1F1F1;
+}
+
+.nav-right {
+    width: 50%;
+    height: 100%;
+    float: right;
+    text-align: right;
+    font-family: "微软雅黑";
+    font-size: 12px;
+    line-height: 36px;
+}
+
+.logo {
+    width: 100%;
+    height: 70px;
+    background-color: #FFFFFF;
+}
+
+.logo-img {
+    width: 165px;
+    height: 100%;
+    float: left;
+}
+
+.content {
+    width: 100%;
+    height: 600px;
+    background-color: #739840;
+}
+
+.contnet-top {
+    width: 100%;
+    height: 50px;
+}
+
+.content-left {
+    width: 50%;
+    height: 550px;
+    text-align: center;
+    float: left;
+}
+
+.contnet-right {
+    width: 50%;
+    height: 550px;
+    text-align: center;
+    float: left;
+}
+
+.login-box {
+    width: 400px;
+    height: 393px;
+    padding: 20px;
+    /*opacity: 0.8;*/
+    float: right;
+    margin: 60px 81px;
+    background-color: #FFFFFF;
+}
+
+.login-title {
+    width: 100%;
+    height: 36px;
+    padding: 20px 0px 0px 0px;
+    font-family: "微软雅黑";
+    font-size: 20px;
+    text-align: center;
+}
+
+.error {
+    width: 350px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-family: "微软雅黑";
+    text-align: left;
+    color: red;
+}
+
+.error2 {
+    width: 350px;
+    height: 30px;
+    line-height: 30px;
+    font-family: "微软雅黑";
+    color: red;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.login-row-1 {
+    width: 100%;
+    height: 50px;
+
+}
+
+.login-row-2 {
+    width: 100%;
+    height: 50px;
+
+}
+
+.login-row-3 {
+    width: 100%;
+    height: 50px;
+
+}
+
+.button {
+    width: 370px;
+    height: 45px;
+    margin-top: 10px;
+    color: white;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    border-radius: 5px;
+    background-color: green;
+}
+
+.userimg {
+    line-height: 45px;
+    float: left;
+    margin-left: 15px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    background-color: #999999;
+}
+
+.codeimg {
+    line-height: 45px;
+    float: left;
+    margin-left: 15px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    background-color: #999999;
+}
+
+.form-input {
+    float: left;
+
+}
+
+.passimg {
+    line-height: 45px;
+    float: left;
+    margin-left: 15px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    background-color: #999999;
+}
+
+.username {
+    width: 300px;
+    height: 41px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+}
+
+.password {
+    width: 300px;
+    height: 41px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.code {
+    width: 100px;
+    height: 41px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.copyright {
+    width: 100%;
+    height: 30px !important;
+    text-align: center;
+    line-height: 30px;
+    font-family: "微软雅黑";
+    font-size: 12px;
+    background-color: #FFFFFF;
+}
+
+#usernamespan {
+    font-size: 12px;
+}
+
+#passwordspan {
+    font-size: 12px;
+}
+
+.index-a a:hover {
+    color: red;
+}

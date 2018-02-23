@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.malajava.dao.IUserDao">
+    <!--查询一个用户-->
+    <select id="checkUserName" resultType="org.malajava.entity.BaseMembersModel" parameterType="string">
+                SELECT * FROM `base_members` b where b.memberName =#{username}
+            </select>
+    <!--添加用户-->
+    <insert id="save" parameterType="map">
+        INSERT INTO base_members (memberNumber,memberPassword,memberName) VALUES (#{memberNumber},#{memberPassword},#{memberNumber})
+    </insert>
+</mapper>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.malajava.dao.IGoodDao">
+    <!--查询热销商品-->
+    <select id="getHotSaleGoods" resultType="ItlbGoodsModel">
+        SELECT * FROM itlb_goods g WHERE g.id in(SELECT s.good_id from itlb_order_details s GROUP BY  s.good_id ORDER BY count(*) DESC) LIMIT 0,6
+    </select>
+</mapper>

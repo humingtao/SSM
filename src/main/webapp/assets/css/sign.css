@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.big {
+    width: 1349px;
+    height: auto;
+}
+
+.container {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+a {
+    width: 50px;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.nav {
+    width: 100%;
+    height: 36px;
+    background-color: #F1F1F1;
+}
+
+.nav-right {
+    width: 50%;
+    height: 100%;
+    float: right;
+    text-align: right;
+    font-family: "微软雅黑";
+    font-size: 12px;
+    line-height: 36px;
+}
+
+.logo {
+    width: 100%;
+    height: 70px;
+    background-color: #FFFFFF;
+}
+
+.logo-img {
+    width: 165px;
+    height: 100%;
+    float: left;
+}
+
+.content {
+    width: 100%;
+    height: 600px;
+    background-color: red;
+}
+
+.contnet-top {
+    width: 100%;
+    height: 5px;
+    background-color: #89C323;
+}
+
+.container2 {
+    width: 100%;
+    height: 600px;
+    background-color: #F6F6F6;
+}
+
+.content-left {
+    width: 50%;
+    height: 550px;
+    margin-top: 50px;
+    text-align: center;
+    line-height: 550px;
+    float: left;
+}
+
+.contnet-right {
+    width: 50%;
+    height: 550px;
+    margin-top: 25px;
+    text-align: center;
+    float: left;
+}
+
+.sign-box {
+    width: 400px;
+    height: 520px;
+    margin-top: 12px;
+    float: right;
+    margin-right: 50px;
+    background-color: #FFFFFF;
+}
+
+.sign-title {
+    width: 100%;
+    height: 40px;
+    font-family: "微软雅黑";
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.error {
+    width: 350px;
+    height: 30px;
+    line-height: 30px;
+    /*margin-top: 5px;*/
+    margin-left: 15px;
+    font-family: "微软雅黑";
+    text-align: left;
+    color: red;
+}
+
+.error3 {
+    width: 350px;
+    height: 30px;
+    line-height: 30px;
+    font-family: "微软雅黑";
+    color: red;
+    text-align: left;
+    float: left;
+    margin-left: 15px;
+}
+
+.sign-row-1 {
+    width: 100%;
+    height: 38px;
+}
+
+.sign-row-2 {
+    width: 100%;
+    height: 40px;
+}
+
+.sign-row-3 {
+    width: 100%;
+    height: 40px;
+}
+
+.sign-row-4 {
+    width: 100%;
+    height: 40px;
+}
+
+.sign-row-5 {
+    width: 100%;
+    height: 40px;
+    float: left;
+}
+
+.sign-row-6 {
+    width: 90%;
+    height: 40px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.sign-row-6 a:hover {
+    color: red;
+}
+
+.checkbox {
+    float: left;
+    margin-top: 20px;
+}
+
+.userimg {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    float: left;
+    margin-left: 15px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    background-color: #EEEEEE;
+}
+
+.codeimg {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    float: left;
+    margin-left: 15px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    background-color: #EEEEEE;
+}
+
+.passimg {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    float: left;
+    margin-left: 15px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    background-color: #EEEEEE;
+}
+
+.messimg {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    float: left;
+    margin-left: 15px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    background-color: #EEEEEE;
+}
+
+.form-input {
+    float: left;
+}
+
+.username {
+    width: 300px;
+    height: 41px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.password {
+    width: 300px;
+    height: 41px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.confirmpass {
+    width: 300px;
+    height: 41px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.code {
+    width: 200px;
+    height: 41px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.mess {
+    width: 150px;
+    height: 41px;
+}
+
+.messspan2 {
+    height: 43px;
+    /*margin-top: 1px;*/
+    width: 150px;
+    line-height: 44px;
+    float: left;
+    font-size: 14px;
+    border: 1px solid #999999;
+    background-color: #EEEEEE;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.messspan2 a:hover {
+    color: red;
+}
+
+.button {
+    width: 370px;
+    height: 45px;
+    color: white;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    border-radius: 5px;
+    background-color: #5CB85C;
+}
+
+.bottom {
+    width: 100%;
+    height: 83px;
+    background-color: #424345;
+    margin-left: 10px;
+}
+
+.font-ul {
+    width: 950px;
+    height: 50px;
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+}
+
+ul {
+    margin-top: 8px;
+    float: left;
+    margin-left: 100px;
+}
+
+ul li {
+    font-size: 18px;
+    float: left;
+    list-style: none;
+}
+
+ul li a {
+    color: white;
+    font-size: 18px;
+}
+
+.foot {
+    height: 222px;
+    background-color: #F1F2F4;
+}
+
+.foot-1 {
+    width: 120px;
+    height: 150px;
+    margin-left: 55px;
+    margin-top: 20px;
+    float: left;
+}
+
+.foot-1-ul {
+    margin-left: 60px;
+    line-height: 30px;
+    font-family: "微软雅黑";
+}
+
+ul li {
+    list-style: none;
+    font-size: 14px;
+}
+
+.foot-2 {
+    width: 280px;
+    height: 150px;
+    margin-left: 55px;
+    margin-top: 20px;
+    float: left;
+}
+
+.foot-1-ul {
+    margin-left: 60px;
+    line-height: 30px;
+    font-family: "微软雅黑";
+}
+
+.foot-finally {
+    width: 340px;
+    height: 150px;
+    margin-left: 105px;
+    margin-top: 20px;
+    float: left;
+}

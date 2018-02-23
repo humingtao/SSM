@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:spring-mybatis="http://mybatis.org/schema/mybatis-spring"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+    <!-- 加载数据库配置文件 -->
+    <context:property-placeholder location="classpath:db.properties"/>
+
+    <!-- 需要扫描的包 配置扫描注解  -->
+    <context:component-scan
+            base-package="org.malajava"/>
+
+    <!-- 配置数据库连接池属性 -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize" value="1"/>
+        <property name="minIdle" value="1"/>
+        <property name="maxActive" value="20"/>
+        <!--配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="10000"/>
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="300000"/>
+
+
+        <property name="testWhileIdle" value="true"/>
+        <!-- 这里建议配置为TRUE，防止取到的连接不可用 -->
+        <property name="testOnBorrow" value="true"/>
+        <property name="testOnReturn" value="false"/>
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize"
+                  value="20"/>
+
+        <!-- 这里配置提交方式，默认就是TRUE，可以不用配置 -->
+        <property name="defaultAutoCommit" value="true"/>
+        <!-- 验证连接有效与否的SQL，不同的数据配置不同 -->
+        <property name="validationQuery" value="select 1 "/>
+        <!-- 配置监控统计拦截的filters -->
+        <property name="filters" value="stat"/>
+    </bean>
+
+
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <!-- 扫描实体类， 需要改成自己的实体类的包 -->
+        <property name="typeAliasesPackage" value="org.malajava.entity"></property>
+        <!-- 扫描mapper映射文件， 需要改成自己的包 -->
+        <property name="mapperLocations" value="classpath:org/**/*.xml"></property>
+    </bean>
+    <!-- 扫描mapper映射类， 需要改成自己的映射类包 -->
+    <spring-mybatis:scan base-package="org.malajava.mapper,org.malajava.dao"/>
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="org.malajava.dao"/>
+    </bean>
+    <!-- 事务管理器 -->
+    <bean id="txManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!-- 打开事务管理 annotation -->
+    <tx:annotation-driven transaction-manager="txManager"/>
+    <!--配置aop-->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <!--配置谷歌验证码-->
+    <bean id="defaultKaptcha" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+        <property name="config">
+            <bean class="com.google.code.kaptcha.util.Config">
+                <constructor-arg>
+                    <props>
+                        <!-- 验证码宽度 -->
+                        <prop key="kaptcha.image.width">120</prop>
+                        <!-- 验证码高度 -->
+                        <prop key="kaptcha.image.height">40</prop>
+                        <!-- 生成验证码内容范围 -->
+                        <prop key="kaptcha.textproducer.char.string">
+                            0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+                        </prop>
+                        <!-- 验证码长度 -->
+                        <prop key="kaptcha.textproducer.char.length">4</prop>
+                        <!-- 是否有边框 -->
+                        <prop key="kaptcha.border">yes</prop>
+                        <!-- 边框颜色 -->
+                        <prop key="kaptcha.border.color">105,179,90</prop>
+                        <!-- 边框厚度 -->
+                        <prop key="kaptcha.border.thickness">1</prop>
+                        <!-- 验证码字体颜色 -->
+                        <prop key="kaptcha.textproducer.font.color">yellow</prop>
+                        <!-- 验证码字体大小 -->
+                        <prop key="kaptcha.textproducer.font.size">30</prop>
+                        <!-- 验证码所属字体样式 -->
+                        <prop key="kaptcha.textproducer.font.names">宋体,楷体,微软雅黑</prop>
+                        <!-- 干扰线颜色 -->
+                        <prop key="kaptcha.noise.color">gray</prop>
+                        <!-- 验证码文本字符间距 -->
+                        <prop key="kaptcha.textproducer.char.space">4</prop>
+                        <!-- 图片样式 :阴影-->
+                        <prop key="kaptcha.obscurificator.impl">com.google.code.kaptcha.impl.WaterRipple</prop>
+                    </props>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+</beans>
